@@ -52,6 +52,7 @@
   a,
   span,
   label,
+  input,
   button {
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
@@ -67,6 +68,24 @@
     margin-bottom: 10px;
     h3 {
       font-size: 1rem;
+    }
+  }
+  .btn {
+    margin-top: 20px;
+    position: relative;
+    background: #d9d9d9;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    overflow: hidden;
+    width: 100%;
+    cursor: pointer;
+    p {
+      position: relative;
+      z-index: 3;
+      color: #000;
+      font-weight: 600;
+      text-align: center;
     }
   }
 </style>

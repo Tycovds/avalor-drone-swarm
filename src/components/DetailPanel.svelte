@@ -10,7 +10,7 @@
         document.querySelector("video")?.requestFullscreen();
       }}
       width="230"
-      src="src/assets/3150402-uhd_4096_2160_25fps.mp4"
+      src="3150402-uhd_4096_2160_25fps.mp4"
       muted
       autoplay
       loop

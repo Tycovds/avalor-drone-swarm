@@ -1,3 +1,8 @@
+interface TargetPosition {    
+  longitude: number;
+  latitude: number;
+  altitude: number;
+}
 // place files you want to import through the `$lib` alias in this folder.
 interface DroneData {
     id: string;
@@ -11,5 +16,6 @@ interface DroneData {
     yaw: number;
     targetMode: 'locked' | 'circle' | 'search';
     battery: number,
-    activetime: number
+    activetime: number,
+    targetPosition: TargetPosition
   }

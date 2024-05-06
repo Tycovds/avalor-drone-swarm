@@ -1,6 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { droneStore } from "../stores/DroneStore";
+  import getRandomCoordinate from "../scripts/getRandomCoordinateInRange";
+
   let btnText: "Hold to launch" | "Launching" = "Hold to launch";
 
   let progress = 0;
@@ -26,13 +28,15 @@
   }
 
   function launch() {
+    const newDroneCoords = getRandomCoordinate(51.476931,5.343987, 500);
+    const targetCoords = getRandomCoordinate(newDroneCoords.latitude, newDroneCoords.longitude, 200);
     $droneStore = [
       ...$droneStore,
       {
         id: "drone" + $droneStore.length,
         callsign: "Drone " + ($droneStore.length + 1),
-        latitude: 51.476931,
-        longitude: 5.343987,
+        latitude: newDroneCoords.latitude,
+        longitude: newDroneCoords.longitude,
         altitude: 0,
         speed: 0,
         roll: 0,
@@ -41,6 +45,11 @@
         targetMode: "locked",
         battery: 100,
         activetime: 0,
+        targetPosition: {
+          latitude: targetCoords.latitude,
+          longitude: targetCoords.longitude,
+          altitude: 22000,
+        },
       },
     ];
   }
@@ -51,35 +60,16 @@
 </script>
 
 <button
-  class="launch-drone"
+  class="btn launch-drone"
   on:mousedown={startProgress}
   on:mouseup={resetProgress}
   on:mouseleave={resetProgress}
 >
   <div style="width: {progress}%" class="progress-bar"></div>
-  <p >{btnText}</p>
+  <p>{btnText}</p>
 </button>
 
 <style lang="scss">
-  .launch-drone {
-    margin-top: 20px;
-    position: relative;
-    background: #d9d9d9;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    overflow: hidden;
-    width: 100%;
-    cursor: pointer;
-    p {
-      position: relative;
-      z-index: 3;
-      color: #000;
-      font-weight: 600;
-      text-align: center;
-    }
-  }
-
   .progress-bar {
     position: absolute;
     top: 0;
