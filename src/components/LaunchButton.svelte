@@ -57,7 +57,7 @@
   on:mouseleave={resetProgress}
 >
   <div style="width: {progress}%" class="progress-bar"></div>
-  <p class="weight-600">{btnText}</p>
+  <p >{btnText}</p>
 </button>
 
 <style lang="scss">
@@ -75,7 +75,7 @@
       position: relative;
       z-index: 3;
       color: #000;
-
+      font-weight: 600;
       text-align: center;
     }
   }

@@ -16,11 +16,11 @@
   <div class="stats">
     <span class="stat">
       <img class="icon" alt="battery percentage icon" src="/battery.svg" />
-      <p class="weight-600">{drone.battery}%</p>
+      <p >{drone.battery}%</p>
     </span>
     <span class="stat">
       <img class="icon" alt="activetime icon" src="/active-time.svg" />
-      <p class="weight-600">{drone.activetime}m</p>
+      <p >{drone.activetime}m</p>
     </span>
   </div>
 </li>
@@ -39,6 +39,7 @@
         display: flex;
         align-items: center;
         gap: 5px;
+        font-weight: 600;
         .icon {
           height: 14px;
         }

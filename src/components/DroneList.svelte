@@ -7,7 +7,7 @@
 
 <div class="drone-list">
   <div class="feature-header">
-    <h3 class="weight-600">Drones</h3>
+    <h3>Drones</h3>
     <span>{$droneStore.length}/5</span>
   </div>
   <ul>
@@ -24,6 +24,11 @@
 
 <style lang="scss">
   .drone-list {
+    .feature-header {
+      h3 {
+        font-weight: 600;
+      }
+    }
     ul {
       display: flex;
       gap: 15px;
