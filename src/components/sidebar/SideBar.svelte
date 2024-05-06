@@ -1,7 +1,7 @@
 <script>
-  import DroneList from "./DroneList.svelte";
-  import TargetPosition from "./TargetPosition.svelte";
-  import { selectedDrone } from "../stores/DroneStore";
+  import DroneList from "./features/DroneList.svelte";
+  import TargetPosition from "./features/TargetPosition.svelte";
+  import { selectedDrone } from "../../stores/DroneStore";
 </script>
 
 <aside class="panel">

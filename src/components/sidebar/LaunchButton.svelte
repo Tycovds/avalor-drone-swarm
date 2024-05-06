@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { droneStore } from "../stores/DroneStore";
-  import getRandomCoordinate from "../scripts/getRandomCoordinateInRange";
+  import { droneStore } from "../../stores/DroneStore";
+  import getRandomCoordinate from "../../scripts/getRandomCoordinateInRange";
 
   let btnText: "Hold to launch" | "Launching" = "Hold to launch";
 

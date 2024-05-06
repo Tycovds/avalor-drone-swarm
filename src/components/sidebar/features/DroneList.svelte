@@ -1,8 +1,8 @@
 <script lang="ts">
   import DroneListItem from "./DroneListItem.svelte";
-  import LaunchButton from "./LaunchButton.svelte";
+  import LaunchButton from "../LaunchButton.svelte";
 
-  import { droneStore } from "../stores/DroneStore";
+  import { droneStore } from "../../../stores/DroneStore";
 </script>
 
 <div class="drone-list">

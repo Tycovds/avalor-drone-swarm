@@ -1,6 +1,6 @@
 <script>
   import MainView from "../../components/MainView.svelte";
-  import SideBar from "../../components/SideBar.svelte";
+  import SideBar from "../../components/sidebar/SideBar.svelte";
 
 </script>
 <div class="dashboard">

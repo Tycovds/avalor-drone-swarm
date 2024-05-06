@@ -1,7 +1,6 @@
-<!-- TargetPositionInput.svelte -->
 <script lang="ts">
   import { onMount } from "svelte";
-  import { selectedDrone, droneStore } from "../stores/DroneStore";
+  import { selectedDrone, droneStore } from "../../../stores/DroneStore";
 
   let latitude = "";
   let longitude = "";
@@ -9,21 +8,27 @@
 
   // Update input fields when selectedDrone changes
   onMount(() => {
-    //@ts-ignore
-    latitude = $selectedDrone.targetPosition?.latitude.toString();
-    //@ts-ignore
-    longitude = $selectedDrone.targetPosition?.longitude.toString();
-    //@ts-ignore
-    altitude = $selectedDrone.targetPosition?.altitude.toString();
+    updateInputValues();
   });
+
+  $: {
+    if ($selectedDrone) {
+      updateInputValues();
+    }
+  }
+
+  function updateInputValues() {
+    latitude = $selectedDrone?.targetPosition?.latitude.toString() ?? "";
+    longitude = $selectedDrone?.targetPosition?.longitude.toString() ?? "";
+    altitude = $selectedDrone?.targetPosition?.altitude.toString() ?? "";
+  }
 
   // Function to handle form submission
   function handleSubmit(event: { preventDefault: () => void }) {
     event.preventDefault();
     droneStore.update((drones) => {
       return drones.map((drone) => {
-        //@ts-ignore
-        if (drone.id === $selectedDrone.id) {
+        if (drone.id === $selectedDrone?.id) {
           return {
             ...drone,
             targetPosition: {
@@ -36,7 +41,6 @@
         return drone;
       });
     });
-    console.log($selectedDrone?.targetPosition);
   }
 </script>
 

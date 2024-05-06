@@ -58,6 +58,17 @@
     font-optical-sizing: auto;
     font-style: normal;
     color: #ffffff;
+  
+  }
+  input {
+    &:focus {
+            outline: solid 2px #a5a5a5;
+          }
+  }
+  button {
+    &:focus {
+            outline: solid 2px #fff;
+          }
   }
 
   // panel features

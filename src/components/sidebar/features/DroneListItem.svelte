@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {selectedDroneId} from '../stores/DroneStore';
+    import {selectedDroneId} from '../../../stores/DroneStore';
   export let drone: DroneData;
 
 
