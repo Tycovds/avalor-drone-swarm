@@ -3,3 +3,5 @@ export function load({ url }) {
       url: url.pathname,
     }
 }
+export const ssr = false;
+export const prerender = true;

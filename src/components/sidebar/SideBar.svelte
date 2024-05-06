@@ -9,6 +9,7 @@
   {#if $selectedDrone}
     <TargetPosition />
   {/if}
+  <a class="github" href="https://github.com/Tycovds/avalor-drone-swarm" target="_blank">Github</a>
 </aside>
 
 <style lang="scss">
@@ -19,5 +20,9 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    .github {
+      position: absolute;
+      bottom: 15px;
+    }
   }
 </style>
